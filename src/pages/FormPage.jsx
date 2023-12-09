@@ -28,7 +28,7 @@ function FormPage() {
   return (
     <>
       <div class="container-scroller">
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
             <a class="sidebar-brand brand-logo" href="/">
               <h1
@@ -47,10 +47,11 @@ function FormPage() {
           </div>
           <ul class="nav">
             <Profile />
-            <li class="nav-item nav-category" onClick={handleHome}>
+            
+            <li class="nav-item nav-category" >
               <span class="nav-link">Navigation</span>
             </li>
-            <li class="nav-item menu-items " onClick={handleHome}>
+            <li class="nav-item menu-items " >
               <a class="nav-link" href="/">
                 <span class="menu-icon">
                   <i class="mdi mdi-speedometer"></i>
@@ -59,7 +60,7 @@ function FormPage() {
               </a>
             </li>
 
-            <li class="nav-item menu-items" onClick={handleHistory}>
+            <li class="nav-item menu-items" >
               <a class="nav-link" href="/history">
                 <span class="menu-icon">
                   <i class="mdi mdi-table-large"></i>
@@ -68,12 +69,12 @@ function FormPage() {
               </a>
             </li>
 
-            <li class="nav-item menu-items" onClick={handleAdmin}>
+            <li class="nav-item menu-items" >
               <a class="nav-link" href="/admin">
                 <span class="menu-icon">
                   <i class="mdi mdi-security"></i>
                 </span>
-                <span class="menu-title">Add Admin</span>
+                <span class="menu-title">Admin</span>
               </a>
             </li>
           </ul>
@@ -96,13 +97,7 @@ function FormPage() {
               </button>
               <ul class="navbar-nav w-100">
                 <li class="nav-item w-100">
-                  <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Search products"
-                    />
-                  </form>
+                 
                 </li>
               </ul>
 

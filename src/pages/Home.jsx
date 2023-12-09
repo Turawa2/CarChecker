@@ -45,10 +45,11 @@ function Home() {
           </div>
           <ul class="nav">
             <Profile />
-            <li class="nav-item nav-category" onClick={handleHome}>
+            
+            <li class="nav-item nav-category" >
               <span class="nav-link">Navigation</span>
             </li>
-            <li class="nav-item menu-items active" onClick={handleHome}>
+            <li class="nav-item menu-items active" >
               <a class="nav-link" href="/">
                 <span class="menu-icon">
                   <i class="mdi mdi-speedometer"></i>
@@ -57,7 +58,7 @@ function Home() {
               </a>
             </li>
 
-            <li class="nav-item menu-items" onClick={handleHistory}>
+            <li class="nav-item menu-items" >
               <a class="nav-link" href="/history">
                 <span class="menu-icon">
                   <i class="mdi mdi-table-large"></i>
@@ -66,7 +67,7 @@ function Home() {
               </a>
             </li>
 
-            <li class="nav-item menu-items" onClick={handleAdmin}>
+            <li class="nav-item menu-items" >
               <a class="nav-link" href="/admin">
                 <span class="menu-icon">
                   <i class="mdi mdi-security"></i>
@@ -80,7 +81,7 @@ function Home() {
         <div class="container-fluid page-body-wrapper">
           <nav class="navbar p-0 fixed-top d-flex flex-row">
             <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-              <a class="navbar-brand brand-logo-mini" href="index.html">
+              <a class="navbar-brand brand-logo-mini" href="/">
                 <img src="assets/images/logo-mini.svg" alt="logo" />
               </a>
             </div>
@@ -94,13 +95,7 @@ function Home() {
               </button>
               <ul class="navbar-nav w-100">
                 <li class="nav-item w-100">
-                  <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Search products"
-                    />
-                  </form>
+               
                 </li>
               </ul>
               <ul class="navbar-nav navbar-nav-right" onClick={handleAddCar}>

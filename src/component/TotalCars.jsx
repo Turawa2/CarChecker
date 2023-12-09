@@ -30,7 +30,7 @@ function TotalCars() {
               </div>
             </div>
             <div className="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-              <i className="icon-lg mdi mdi-car text-primary ml-auto"></i>
+              <i className="icon-lg mdi mdi-car text-warning ml-auto"></i>
             </div>
           </div>
         </div>

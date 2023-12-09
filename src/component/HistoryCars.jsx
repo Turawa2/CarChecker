@@ -6,7 +6,7 @@ function HistoryCars() {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    // Fetch history data from the server
+    // Fetch history data from the backend
     axios
       .get("http://localhost:7000/api/getHistoryCars")
       .then((response) => {

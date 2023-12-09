@@ -23,7 +23,10 @@ function AddCarForm() {
     if (!number || !tally || !gender || !date || !time || !documenter) {
       alert("Please fill in all fields!");
     } else {
-      // Send the data to the server
+      // checking data input is  === current date
+      const isToday = new Date(date).toDateString() === new Date().toDateString();
+  
+      // Send the data to the backend
       axios
         .post("http://localhost:7000/api/post/incomingCars", {
           number,
@@ -32,13 +35,11 @@ function AddCarForm() {
           date,
           time,
           documenter,
+          today: isToday ? 1 : 0,  // Insert 1 if today, otherwise insert 0 but i am not using it thus is old idea
         })
         .then((response) => {
-          if (
-            response.data === "Data inserted into both tables successfully!"
-          ) {
+          if (response.data === "Data inserted into both tables successfully!") {
             alert("Registration Successful!");
-            // console.log(Date);
             navigate("/");
             setNumber("");
             setTally("");
@@ -53,6 +54,7 @@ function AddCarForm() {
         .catch((err) => alert("Registration Failed: " + err.response.data));
     }
   };
+  
 
   return (
     <>

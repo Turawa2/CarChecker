@@ -98,7 +98,7 @@ function AdminPage() {
 
   return (
     <div className="main-panel">
-      <div className="content-wrapper">
+      <div className="content-wrapper p-2">
         <div className="col-12 grid-margin">
           <div className="card">
             <div className="card-body">

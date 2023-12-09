@@ -1,18 +1,19 @@
 import React from "react";
 import IncomingCarsTable from "./IncomingCarsTable";
 import TotalCars from "./TotalCars";
-import TimeComp from "./TimeComp";
-import DateComp from "./DateComp";
+import TotalCarsInToday from "./TotalCarsInToday";
+import TotalCarsOutToday from "./TotalCarsOutToday ";
 
 function IncomingCars() {
   return (
     <>
       <div class="main-panel">
-        <div class="content-wrapper">
+        <div class="content-wrapper p-2">
           <div class="row">
+           
+            <TotalCarsInToday />
+            <TotalCarsOutToday />
             <TotalCars />
-            <TimeComp />
-            <DateComp />
           </div>
 
           <IncomingCarsTable />

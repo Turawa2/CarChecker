@@ -6,7 +6,7 @@ function IncomingCarsTable() {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    // Fetch cars data from the server
+    // Fetch cars data from the back
     axios
       .get("http://localhost:7000/api/getIncomingCars")
       .then((response) => {
@@ -18,12 +18,33 @@ function IncomingCarsTable() {
   }, []);
 
   // Function to delete a car by ID
+  const handleCarOut = (car) => {
+    // Post data to the carsout table
+    axios
+      .post("http://localhost:7000/api/post/carsout", {
+        number: car.number,
+        tally: car.tally,
+        gender: car.gender,
+        date: car.date,
+        time: car.time,
+        documenter: car.documenter,
+      })
+      .then(() => {
+        // Delete the car from the cars table
+        deleteCar(car.id);
+      })
+      .catch((err) => {
+        console.error("Error posting data to carsout: ", err);
+      });
+  };
+
+  // Function to delete a car by ID
   const deleteCar = (id) => {
     if (window.confirm("Are you sure this car is going out?")) {
       axios
         .delete(`http://localhost:7000/api/delete/car/${id}`)
         .then(() => {
-          // Update the car list after successful deletion
+          // Update the car list after succesfl delete
           const updatedCars = cars.filter((car) => car.id !== id);
           setCars(updatedCars);
         })
@@ -79,7 +100,7 @@ function IncomingCarsTable() {
                         <td> {car.documenter} </td>
                         <td>
                           <button
-                            onClick={() => deleteCar(car.id)}
+                            onClick={() => handleCarOut(car)}
                             type="button"
                             class="btn btn-inverse-success btn-fw"
                           >

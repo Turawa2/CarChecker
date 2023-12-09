@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HistoryCars from "../component/HistoryCars";
 import { useNavigate } from "react-router-dom";
 import Checker from "../component/Checker";
@@ -6,6 +6,7 @@ import Profile from "../component/Profile";
 
 function History() {
   Checker();
+
 
   const navigate = useNavigate();
 
@@ -21,10 +22,11 @@ function History() {
     e.preventDefault();
     navigate("/admin");
   };
+  
   return (
     <>
       <div class="container-scroller">
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
             <a class="sidebar-brand brand-logo" href="/">
               <h1
@@ -43,10 +45,11 @@ function History() {
           </div>
           <ul class="nav">
             <Profile />
-            <li class="nav-item nav-category" onClick={handleHome}>
+            
+            <li class="nav-item nav-category" >
               <span class="nav-link">Navigation</span>
             </li>
-            <li class="nav-item menu-items " onClick={handleHome}>
+            <li class="nav-item menu-items " >
               <a class="nav-link" href="/">
                 <span class="menu-icon">
                   <i class="mdi mdi-speedometer"></i>
@@ -55,7 +58,7 @@ function History() {
               </a>
             </li>
 
-            <li class="nav-item menu-items active" onClick={handleHistory}>
+            <li class="nav-item menu-items active" >
               <a class="nav-link" href="/history">
                 <span class="menu-icon">
                   <i class="mdi mdi-table-large"></i>
@@ -64,7 +67,7 @@ function History() {
               </a>
             </li>
 
-            <li class="nav-item menu-items " onClick={handleAdmin}>
+            <li class="nav-item menu-items" >
               <a class="nav-link" href="/admin">
                 <span class="menu-icon">
                   <i class="mdi mdi-security"></i>
@@ -92,13 +95,7 @@ function History() {
               </button>
               <ul class="navbar-nav w-100">
                 <li class="nav-item w-100">
-                  <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Search products"
-                    />
-                  </form>
+               
                 </li>
               </ul>
 
